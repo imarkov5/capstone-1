@@ -1,0 +1,15 @@
+.home-page{
+    background-image: url(https://teahow.com/wp-content/uploads/2019/02/can-you-reuse-loose-leaf-tea-leaves.jpg);
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color:white;
+}
+.axiom{
+    padding-top: 10rem;
+    color: rgb(245, 164, 94);
+    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+    font-family:fantasy;
+}

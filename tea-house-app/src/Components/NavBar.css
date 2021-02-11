@@ -1,0 +1,32 @@
+.logo{
+    color: #a0978e;
+    font-size: 3rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.logo:hover{
+    text-decoration: none;
+    color: white;
+}
+nav ul{
+    padding-top: 1.5rem;
+    display:flex;
+    margin: 0 -0.5rem;
+    list-style-type: none;
+}
+nav li{
+    margin: 0 2rem;
+}
+.push-left{
+    margin-right: auto;
+}
+.nav-links {
+    color:#f3770b;
+    text-decoration: none;
+}
+.nav-links:hover {
+    text-decoration:none;
+    color: red;
+}
+#dropdown-basic{
+    color:#f3770b;
+}
