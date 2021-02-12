@@ -7,7 +7,8 @@ export default {
         s_number: "0001",
         price: 5.55,
         quantity: 10,
-        image: '/Images/Green.jpg' 
+        image: './images/Green.jpg',
+        description: "Robust and invigorating Vietnamese green tea." 
     },
     {
         id: 2,
@@ -16,7 +17,8 @@ export default {
         s_number: "0002",
         price: 5.50,
         quantity: 10,
-        image: "/Images/Green_Simple_Peach.jpg" 
+        image: "./images/Green_Simple_Peach.jpg",
+        description: "Green tea with dried peach." 
     },
     {
         id: 3,
@@ -25,7 +27,8 @@ export default {
         s_number: "0003",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Green_Jasmine.jpg" 
+        image: "./images/Green_Jasmine.jpg",
+        description: "Balanced cup of organic Chinese Jasmine Yin Hao." 
     },
     {
         id: 4,
@@ -34,7 +37,8 @@ export default {
         s_number: "0004",
         price: 5.75,
         quantity: 10,
-        image: "/Images/Green_Dragon.jpg" 
+        image: "./images/Green_Dragon.jpg",
+        description: "Fragrant, high quality Dragon Well green tea crafted by hand." 
     },
     {
         id: 5,
@@ -43,7 +47,8 @@ export default {
         s_number: "0005",
         price: 6.55,
         quantity: 10,
-        image: "/Images/White_Monkey.jpg" 
+        image: "./images/White_Monkey.jpg",
+        description: "From China, this tea is going to have a sweet and floral aroma." 
     },
     {
         id: 6,
@@ -52,7 +57,8 @@ export default {
         s_number: "0006",
         price: 6.25,
         quantity: 10,
-        image: "/Images/White_Peony.jpg" 
+        image: "./images/White_Peony.jpg",
+        description: "Highest quality hand-picked finest white tea." 
     },
     {
         id: 7,
@@ -61,7 +67,8 @@ export default {
         s_number: "0007",
         price: 6.75,
         quantity: 10,
-        image: "/Images/White_Jade.jpg" 
+        image: "./images/White_Jade.jpg",
+        description: "Delicate luxury Taiwanese white tea with vegetal notes and a woodsy body." 
     },
     {
         id: 8,
@@ -70,16 +77,18 @@ export default {
         s_number: "0008",
         price: 6.50,
         quantity: 10,
-        image: "/Images/White_Blueberry.jpg" 
+        image: "./images/White_Blueberry.jpg",
+        description: "Shou Mei White Tea with freeze-dried blueberries and cornflower petals." 
     },
     {
         id: 9,
         category: "black",
-        name: "Blueberry BLack",
+        name: "Blueberry Black",
         s_number: "0009",
         price: 5.50,
         quantity: 10,
-        image: "/Images/Black_Blueberry.jpg" 
+        image: "./images/Black_Blueberry.jpg",
+        description: "Indian Black tea with blue mallow blossoms and blueberry flavor." 
     },
     {
         id: 10,
@@ -88,16 +97,18 @@ export default {
         s_number: "0010",
         price: 5.25,
         quantity: 10,
-        image: "/Images/Black_Midnight_Rose.jpg" 
+        image: "./images/Black_Midnight_Rose.jpg",
+        description: "Sencha and black tea with vanilla bits, rose petals, rose hips, and safflowers." 
     },
     {
         id: 11,
         category: "black",
-        name: "Raspberry black",
+        name: "Raspberry Black",
         s_number: "0011",
         price: 5.75,
         quantity: 10,
-        image: "/Images/Black_Raspberry.jpg" 
+        image: "./images/Black_Raspberry.jpg",
+        description: "South Indian Black Tea with freeze dried raspberries." 
     },
     {
         id: 12,
@@ -106,7 +117,8 @@ export default {
         s_number: "0012",
         price: 5.75,
         quantity: 10,
-        image: "/Images/Black_Ginger_Peach.jpg" 
+        image: "./images/Black_Ginger_Peach.jpg", 
+        description: "South Indian Black tea with dried Papaya pieces, ginger root and sunflower petals."
     },
     {
         id: 13,
@@ -115,7 +127,8 @@ export default {
         s_number: "0013",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Oolong_Morning.jpg" 
+        image: "./images/Oolong_Morning.jpg",
+        description: "Oolong tea with marigold petals, lemon peel and basil leaf." 
     },
     {
         id: 14,
@@ -124,7 +137,8 @@ export default {
         s_number: "0014",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Oolong_Creme_Brulee.jpg" 
+        image: "./images/Oolong_Creme_Brulee.jpg",
+        description: "Low caffeine Oolong tea with almond pieces, cinnamon chips, and jasmine flowers." 
     },
     {
         id: 15,
@@ -133,7 +147,8 @@ export default {
         s_number: "0015",
         price: 6.55,
         quantity: 10,
-        image: "/Images/Oolong_Fujian.jpg" 
+        image: "./images/Oolong_Fujian.jpg",
+        description: "A nice woody, roasted aroma with a slight honey flavor." 
     },
     {
         id: 16,
@@ -142,7 +157,8 @@ export default {
         s_number: "0016",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Oolong_Orange_Blossom.jpg" 
+        image: "./images/Oolong_Orange_Blossom.jpg",
+        description: "Oolong tea with orange peel and orange." 
     },
     {
         id: 17,
@@ -151,7 +167,8 @@ export default {
         s_number: "0017",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Yerba_Premium.jpg" 
+        image: "./images/Yerba_Premium.jpg",
+        description: "Herbal and spiced flavorful blend" 
     },
     {
         id: 18,
@@ -160,7 +177,8 @@ export default {
         s_number: "0018",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Yerba_Green.jpg" 
+        image: "./images/Yerba_Green.jpg",
+        description: "Pure euphoric green Yerba Mate." 
     },
     {
         id: 19,
@@ -169,7 +187,8 @@ export default {
         s_number: "0019",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Yerba_Roasted.jpg" 
+        image: "./images/Yerba_Roasted.jpg",
+        description: "Roasted, dark and rich with notes of burnt caramel."
     },
     {
         id: 20,
@@ -178,7 +197,8 @@ export default {
         s_number: "0020",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Yerba_Ginseng.jpg" 
+        image: "./images/Yerba_Ginseng.jpg",
+        description: "High intensity blend of mate, puerh, ginseng, and tulsi." 
     },
     {
         id: 21,
@@ -187,7 +207,8 @@ export default {
         s_number: "0021",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Puerh_Moonlight.jpg" 
+        image: "./images/Puerh_Moonlight.jpg",
+        description: "With aromatic hay scent, and light sweet woodsy floral taste."
     },
     {
         id: 22,
@@ -196,7 +217,8 @@ export default {
         s_number: "0022",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Puerh_Japanese.jpg" 
+        image: "./images/Puerh_Japanese.jpg",
+        description: "Unique smoked oak flavor, with a hint of citrus peel bitterness and caramel like sweetness." 
     },
     {
         id: 23,
@@ -205,7 +227,8 @@ export default {
         s_number: "0023",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Puerh_Naked.jpg" 
+        image: "./images/Puerh_Naked.jpg",
+        description: "Mild soil notes, floral, with mushroom flavor, miso and wood." 
     },
     {
         id: 24,
@@ -214,7 +237,8 @@ export default {
         s_number: "0024",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Puerh_Vintage.jpg" 
+        image: "./images/Puerh_Vintage.jpg",
+        description: "A bold, rich earthy flavor, that has a slightly sweet taste and a reddish brown liquor." 
     },
     {
         id: 25,
@@ -223,7 +247,8 @@ export default {
         s_number: "0025",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Herbal_Garden_of_Mariposa.jpg" 
+        image: "./images/Herbal_Garden_of_Mariposa.jpg",
+        description: "Organic crashed cardamon, orange peel, turmeric, hibiscus, rose petal, clove, and lavender" 
     },
     {
         id: 26,
@@ -232,7 +257,8 @@ export default {
         s_number: "0026",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Herbal_Berry_Delight.jpg" 
+        image: "./images/Herbal_Berry_Delight.jpg",
+        description: "Green Rooibos, blue flowers, rhubarb pieces, red/black currants, safflowers with raspberry and acai berry flavor." 
     },
     {
         id: 27,
@@ -241,7 +267,8 @@ export default {
         s_number: "0027",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Herbal_Citrus_Hibiscus.jpg" 
+        image: "./images/Herbal_Citrus_Hibiscus.jpg",
+        description: "Hibiscus with rose hips, organic rooibos, lemongrass and orange peel." 
     },
     {
         id: 28,
@@ -250,7 +277,8 @@ export default {
         s_number: "0028",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Herbal_Prickly_Pear.jpg" 
+        image: "./images/Herbal_Prickly_Pear.jpg",
+        description: "Hibiscus flowers, rose hips, chicory root, chamomile flowers, dried prickly pear cactus fruit pieces." 
     },
     {
         id: 29,
@@ -259,7 +287,8 @@ export default {
         s_number: "0029",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Yellow_Camellia.jpg" 
+        image: "./images/Yellow_Camellia.jpg",
+        description: "Rare yellow tea that is thick, sweet, and reminiscent of sweet buttered corn." 
     },
     {
         id: 30,
@@ -268,6 +297,7 @@ export default {
         s_number: "0030",
         price: 6.75,
         quantity: 10,
-        image: "/Images/Yellow_Miracle.jpg" 
+        image: "./images/Yellow_Miracle.jpg",
+        description: "Wonderfully floral, similar to oolong with a slight chrysanthemum aroma." 
     }
 ]}

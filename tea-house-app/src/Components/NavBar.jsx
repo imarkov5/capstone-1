@@ -1,18 +1,9 @@
-// import Dropdown from './Dropdown';
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import { Dropdown } from 'react-bootstrap';
 
 function NavBar(){
-    // const [dropdown, setDropdown] = useState(false);
-
-    // const onMouseEnter = () => {
-    //     setDropdown(true);
-    // }
-    // const onMouseLeave = () => {
-    //     setDropdown(false);
-    // }
 
     return(
         <nav>
@@ -26,26 +17,27 @@ function NavBar(){
                         Collections
                     </Dropdown.Toggle>
 
-                    <Dropdown.Menu>
+                    <Dropdown.Menu id="dropdown-menu">
                         <Dropdown.Item href="/all_products">All Products</Dropdown.Item>
                         <Dropdown.Item href="/green">Green</Dropdown.Item>
                         <Dropdown.Item href="/white">White</Dropdown.Item>
+                        <Dropdown.Item href="/oolong">Oolong</Dropdown.Item>
+                        <Dropdown.Item href="/yerba">Yerba</Dropdown.Item>
+                        <Dropdown.Item href="/puerh">Puerh</Dropdown.Item>
+                        <Dropdown.Item href="/herbal">Herbal</Dropdown.Item>
+                        <Dropdown.Item href="/yellow">Yellow</Dropdown.Item>
+                        <Dropdown.Item href="/black">Black</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>
                 </li>
                 <li className='nav-item'>
-                      <Link to='/contact-us' className='nav-links'>
-                          Contact Us
-                      </Link>
+                    <Link to='/cart' className='nav-links'>
+                        Cart
+                    </Link>
                 </li>
                 <li className='nav-item'>
                     <Link to='/sign-in' className='nav-links'>
                         Sign In
-                    </Link>
-                </li>
-                <li className='nav-item'>
-                    <Link to='/cart' className='nav-links'>
-                        Cart
                     </Link>
                 </li>
             </ul>

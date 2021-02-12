@@ -29,4 +29,12 @@ nav li{
 }
 #dropdown-basic{
     color:#f3770b;
+    background-color: #41494b;
+    font-size: calc(10px + 2vmin);
+}
+#dropdown-basic:hover {
+    color: red;
+}
+#dropdown-menu{
+    background-color: #41494b;
 }
