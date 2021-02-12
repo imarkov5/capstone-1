@@ -8,11 +8,12 @@
   font-size: calc(10px + 2vmin);
 }
 main{
-  min-height: 75vh;
+  min-height: 80vh;
 }
 footer{
-  min-height: 5vh;
+  min-height: 2vh;
 }
+
 
 
 

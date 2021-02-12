@@ -14,13 +14,14 @@ export default function AllProducts() {
             {
                 data.products.map(product => 
                     <Card style={{ width: '18rem' }}>
-                <LinkContainer to="/{product.id}"><Card.Img variant="top" href="/{product.id}" src={product.image}/></LinkContainer>
+                <LinkContainer to={'/products/' + product.id}><Card.Img variant="top" src={product.image}/></LinkContainer>
                 <Card.Body>
-                <LinkContainer to="/{product.id}"><Card.Title href="/{product.id}">{product.name}</Card.Title></LinkContainer>
+                <LinkContainer to={'/products/' + product.id}><Card.Title href="/">{product.name}</Card.Title></LinkContainer>
                     <Card.Text>
                     ${product.price}
                     </Card.Text>
                     <Button variant="primary">Add To Cart</Button>
+                    <LinkContainer to={'/products/' + product.id}><Button variant="secondary">View Details</Button></LinkContainer>
                 </Card.Body>
                 </Card>
                 )      

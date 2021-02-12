@@ -18,7 +18,7 @@ function NavBar(){
                     </Dropdown.Toggle>
 
                     <Dropdown.Menu id="dropdown-menu">
-                        <Dropdown.Item href="/all_products">All Products</Dropdown.Item>
+                        <Dropdown.Item href="/all_products">All Collections</Dropdown.Item>
                         <Dropdown.Item href="/green">Green</Dropdown.Item>
                         <Dropdown.Item href="/white">White</Dropdown.Item>
                         <Dropdown.Item href="/oolong">Oolong</Dropdown.Item>

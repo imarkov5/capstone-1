@@ -14,6 +14,7 @@ import Puerh from './Views/Category/Puerh';
 import Yellow from './Views/Category/Yellow';
 import Yerba from './Views/Category/Yerba';
 import Herbal from './Views/Category/Herbal';
+import ProductDetail from './Views/ProductDetail';
 
 function App() {
   return (
@@ -51,6 +52,9 @@ function App() {
         </Route>
         <Route path="/yellow">
           <Yellow/>
+        </Route>
+        <Route path="/products/:id">
+          <ProductDetail/>
         </Route>
       </main>
       <footer>

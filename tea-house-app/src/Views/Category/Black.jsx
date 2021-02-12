@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card, Button} from 'react-bootstrap';
 import data from '../../data';
+import { LinkContainer } from 'react-router-bootstrap';
 
 export default function Black() {
     const blackTea = [];
@@ -14,13 +15,14 @@ export default function Black() {
             {
                 blackTea.map(product => 
                     <Card style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={product.image} />
+                <LinkContainer to={'/products/' + product.id}><Card.Img variant="top" src={product.image}/></LinkContainer>
                 <Card.Body>
-                    <Card.Title>{product.name}</Card.Title>
+                <LinkContainer to={'/products/' + product.id}><Card.Title>{product.name}</Card.Title></LinkContainer>
                     <Card.Text>
-                    {product.price}
+                    ${product.price}
                     </Card.Text>
                     <Button variant="primary">Add To Cart</Button>
+                    <LinkContainer to={'/products/' + product.id}><Button variant="secondary">Add To Cart</Button></LinkContainer>
                 </Card.Body>
                 </Card>
                 )      
