@@ -2,6 +2,7 @@ import React from 'react';
 import {Card, Button} from 'react-bootstrap';
 import data from '../../data';
 import { LinkContainer } from 'react-router-bootstrap';
+import ProductDetail from '../ProductDetail';
 
 export default function Black() {
     const blackTea = [];
@@ -22,7 +23,7 @@ export default function Black() {
                     ${product.price}
                     </Card.Text>
                     <Button variant="primary">Add To Cart</Button>
-                    <LinkContainer to={'/products/' + product.id}><Button variant="secondary">Add To Cart</Button></LinkContainer>
+                    <LinkContainer to={'/products/' + product.id}><Button variant="secondary">View Details</Button></LinkContainer>
                 </Card.Body>
                 </Card>
                 )      

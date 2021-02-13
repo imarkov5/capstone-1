@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
 import "bootstrap/dist/css/bootstrap.css";
@@ -53,7 +53,7 @@ function App() {
         <Route path="/yellow">
           <Yellow/>
         </Route>
-        <Route path="/products/:id">
+        <Route path="/products/:id" component={ProductDetail}>
           <ProductDetail/>
         </Route>
       </main>

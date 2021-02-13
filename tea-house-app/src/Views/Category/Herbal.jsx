@@ -22,7 +22,7 @@ export default function Herbal() {
                     ${product.price}
                     </Card.Text>
                     <Button variant="primary">Add To Cart</Button>
-                    <LinkContainer to={'/products/' + product.id}><Button variant="secondary">Add To Cart</Button></LinkContainer>
+                    <LinkContainer to={'/products/' + product.id}><Button variant="secondary">View Details</Button></LinkContainer>
                 </Card.Body>
                 </Card>
                 )      
