@@ -38,13 +38,17 @@ function App() {
       setCartItems([...cartItems, {...product, qty: 1}]);
     }
   }
+  // onRemove function takes a product as a parameter and checks it against cartItems
   const onRemove = (product) => {
     const exist = cartItems.find((x) => x.id === product.id);
     if(exist.qty === 1){
+      // if there's only one item in exist then remove it from the cartItems by filtering setCartItems (filter method creates new array taking only items which have id that doesn't equal to product.id))
       setCartItems(cartItems.filter((x) => x.id !== product.id))
     }else{
+      // if the quantity is more than 1 then decrease it by one
       setCartItems(
         cartItems.map((x) =>
+        // mapping through the cartItems, spreading exist to decrease quantity if product id is the same as item id in the cartItems, otherwise leaving the item as it is
         x.id === product.id ? {...exist, qty: exist.qty - 1} : x)
       );
     }
@@ -52,7 +56,8 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <NavBar/>
+        {/* cartItemsQuantity to pass the length of the cartItems to navbar */}
+        <NavBar cartItemsQuantity={cartItems.length}/>
       </header>
       <main>
         <Route exact path="/">

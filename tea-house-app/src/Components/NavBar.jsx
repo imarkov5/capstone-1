@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import './NavBar.css';
 import { Dropdown } from 'react-bootstrap';
 
-function NavBar(){
-
+function NavBar({cartItemsQuantity}){
+    // passed destructured props (cartItemsQuantity) from App
     return(
         <nav>
             <ul>
@@ -30,6 +30,12 @@ function NavBar(){
                 <li className='nav-item'>
                     <Link to='/cart' className='nav-links'>
                         Cart
+                        {/* if there is objects in cartItems array (products in the cart) show quantity, if not empty string */}
+                        {cartItemsQuantity ? (
+                            <span> {cartItemsQuantity}</span>
+                        ) : (
+                            ''
+                        )}
                     </Link>
                 </li>
                 <li className='nav-item'>

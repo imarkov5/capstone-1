@@ -1,13 +1,13 @@
 import React from 'react'
 
 export default function ShoppingCart(props) {
-    //passed the props in App.jsx
+    //passed the props from App.jsx
     const {cartItems, onAdd, onRemove} = props;
-    const TotalPrice = cartItems.reduce((acc, current_item) => acc + current_item.price * current_item.qty, 0);
+    // using reduce function to calculate total price of all products in the cartItems array, setting default value to 0
+    const TotalPrice = cartItems.reduce((accumulator, current_item) => accumulator + current_item.price * current_item.qty, 0);
     console.log("CartItems"+ cartItems);
     return (
         <div>
-            <h1>Cart Items</h1>
             {/* Conditional rendering to check if cartItems array is empty */}
             <div>{cartItems.length === 0 && <h2>Your Cart is Empty</h2>}</div>
             {/* mapping through cartItems to display values of items from the cartItems objects */}
@@ -35,8 +35,8 @@ export default function ShoppingCart(props) {
                 {cartItems.length !==0 && (
                         <>
                         <hr/>
-                        <div>Total Price</div>
-                        <div>{TotalPrice.toFixed(2)}</div>
+                        <div><strong>Total Price</strong></div>
+                        <div><strong>{TotalPrice.toFixed(2)}</strong></div>
                         </>
                     )}
         </div>
