@@ -2,7 +2,6 @@ import React from 'react';
 import {Card, Button} from 'react-bootstrap';
 import data from '../../data';
 import { LinkContainer } from 'react-router-bootstrap';
-import ProductDetail from '../ProductDetail';
 
 export default function Black() {
     const blackTea = [];

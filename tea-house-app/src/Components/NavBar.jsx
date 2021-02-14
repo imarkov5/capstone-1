@@ -21,11 +21,8 @@ function NavBar(){
                         <Dropdown.Item href="/all_products">All Collections</Dropdown.Item>
                         <Dropdown.Item href="/green">Green</Dropdown.Item>
                         <Dropdown.Item href="/white">White</Dropdown.Item>
-                        <Dropdown.Item href="/oolong">Oolong</Dropdown.Item>
                         <Dropdown.Item href="/yerba">Yerba</Dropdown.Item>
                         <Dropdown.Item href="/puerh">Puerh</Dropdown.Item>
-                        <Dropdown.Item href="/herbal">Herbal</Dropdown.Item>
-                        <Dropdown.Item href="/yellow">Yellow</Dropdown.Item>
                         <Dropdown.Item href="/black">Black</Dropdown.Item>
                     </Dropdown.Menu>
                 </Dropdown>

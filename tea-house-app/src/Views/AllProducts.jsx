@@ -1,29 +1,16 @@
 import React from 'react';
-import data from '../data';
-import {Card, Button, Row, Col} from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import Product from '../Components/Product';
 
-export default function AllProducts(props) {
-    
+export default function ProductDetail(props) {
+    // passed products and onAdd in App.js and deconstructing them here
+    const {products, onAdd} = props;
     return (
-        <Row>
-        <Col xs={6} md={4}>
-            {
-                data.products.map(product => 
-                    <Card key={product.id} style={{ width: '18rem' }}>
-                <LinkContainer to={'/products/' + product.id}><Card.Img variant="top" src={product.image}/></LinkContainer>
-                <Card.Body>
-                <LinkContainer to={'/products/' + product.id}><Card.Title>{product.name}</Card.Title></LinkContainer>
-                    <Card.Text>
-                    ${product.price}
-                    </Card.Text>
-                    <Button variant="primary">Add To Cart</Button>
-                    <LinkContainer to={'/products/' + product.id}><Button variant="secondary">View Details</Button></LinkContainer>
-                </Card.Body>
-                </Card>
-                )      
-            }
-        </Col>
-        </Row>
+            <div>
+                {/* mapping through products array to display all product items and passing it to Product component */}
+                {products.map((product) => (
+                    // added product and onAdd to pass it to Product component
+                    <Product key={product.id} product={product} onAdd={onAdd}></Product>
+                ))}
+            </div>
     )
 }

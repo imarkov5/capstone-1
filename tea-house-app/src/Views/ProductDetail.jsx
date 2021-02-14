@@ -3,12 +3,20 @@ import React from 'react';
 import data from '../data';
 
 export default function ProductDetail(props) {
-    console.log(props.match.params.id);
-    //const current_product = data.products.find(item => item.id === props.match.params.id);
     
+    
+    const product = data.products.find(x => x.id == window.location.pathname.substring(10));
+    console.log(window.location.pathname.substring(10));
+
     return (
         
-        <div>Product Detail page</div>
-       
+        <div>Product Detail page
+            
+                <h1>{product.name}</h1>
+                <p>{product.description}</p>
+               <div><img src={product.image}/></div>
+                
+        
+       </div>
     )
 }
