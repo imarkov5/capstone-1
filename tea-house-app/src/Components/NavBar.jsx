@@ -29,10 +29,10 @@ function NavBar({cartItemsQuantity}){
                 </li>
                 <li className='nav-item'>
                     <Link to='/cart' className='nav-links'>
-                        Cart
+                        <img src="images/cart.png"/>
                         {/* if there is objects in cartItems array (products in the cart) show quantity, if not empty string */}
                         {cartItemsQuantity ? (
-                            <span> {cartItemsQuantity}</span>
+                            <span id="cart-total">{cartItemsQuantity}</span>
                         ) : (
                             ''
                         )}

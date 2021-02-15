@@ -10,7 +10,7 @@ export default function Product(props) {
     
     return (
         <div>
-            <Col>
+            
                 <Card style={{ width: '15rem' }} className="card">
                     <LinkContainer to={`products/${product.id}`}><Card.Img variant="top" src={product.image}/></LinkContainer>
                     <Card.Body>
@@ -24,7 +24,7 @@ export default function Product(props) {
                         {/* <LinkContainer to={{ pathname: '/products/${product.id', state: { item: product} }}>View Details</LinkContainer> */}
                     </Card.Body>
                 </Card>
-            </Col>
+            
         </div>
     )
 }

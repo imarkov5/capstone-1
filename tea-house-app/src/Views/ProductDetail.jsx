@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, ListGroup, ListGroupItem, Button, Row} from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
 import data from '../data';
 
 export default function ProductDetail(props) {
@@ -23,12 +24,13 @@ export default function ProductDetail(props) {
                 </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
-                <ListGroupItem>Category: {product.category}</ListGroupItem>
+                <ListGroupItem>Category: {product.category.toUpperCase()}</ListGroupItem>
                 <ListGroupItem>Serial Number: {product.s_number}</ListGroupItem>
-                <ListGroupItem>Price: ${product.price}</ListGroupItem>
+                <ListGroupItem>Price: ${product.price.toFixed(2)}</ListGroupItem>
             </ListGroup>
             <Card.Body>
-            <Button onClick={() => onAdd(product)} variant="outline-success" size="lg">Add To Cart</Button>
+            <Button onClick={() => onAdd(product)} variant="outline-success" size="md">Add To Cart</Button>
+            <LinkContainer to="/all_products"><Button variant="outline-secondary">Continue Shopping</Button></LinkContainer>
             </Card.Body>
             </Card>
             </Row>       

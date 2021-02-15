@@ -1,91 +1,49 @@
 import React from 'react';
-import {Card, ListGroup, ListGroupItem, Button, Row, Container, Col} from 'react-bootstrap';
+import {Card, ListGroup, ListGroupItem, Button, Row, Container, Col, Image} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
+import { Link } from 'react-router-dom';
 
 export default function ShoppingCart(props) {
     //passed the props from App.jsx
     const {cartItems, onAdd, onRemove} = props;
-    // using reduce function to calculate total price of all products in the cartItems array, setting default value to 0
-    const TotalPrice = cartItems.reduce((accumulator, current_item) => accumulator + current_item.price * current_item.qty, 0);
-    console.log("CartItems"+ cartItems);
-    return (
-        <div>
-            {cartItems.length !==0 && (
-                        <>
-                        <hr/>
-                        <div><strong>Total Price</strong></div>
-                        <div><strong>{TotalPrice.toFixed(2)}</strong></div>
-                        </>
-                    )}
-                    <hr/>
-            <Container fluid>
-                {/* Conditional rendering to check if cartItems array is empty */}
-                <div>{cartItems.length === 0 && <h2>Your Cart is Empty</h2>}</div>
-                <Row xs={2} md={3} lg={4}>
-                
-                    {cartItems.map((item) => ( 
-                        
-                        <Card style={{ width: '20rem' }}>
-                    <LinkContainer to={'/products/' + item.id}><Card.Img variant="top" src={item.image}/></LinkContainer>
-                    <Card.Body>
-                    <LinkContainer to={'/products/' + item.id}><Card.Title>{item.name}</Card.Title></LinkContainer>
-                        <Card.Text>
-                        {item.qty} X {item.price.toFixed(2)}
-                        </Card.Text>
-                        <Button  onClick={() => onAdd(item)} variant="outline-success">Add</Button>
-                        <Button onClick={() => onRemove(item)} variant="outline-dark">Remove</Button>
-                    </Card.Body>
-                    </Card>
-                    )  
-                    )
-                    
-                    }
-                
-                </Row>
-                </Container>
-                
 
-            {/* Conditional rendering to check if cartItems array is empty */}
-            {/* <div>{cartItems.length === 0 && <h2>Your Cart is Empty</h2>}</div> */}
-            {/* mapping through cartItems to display values of items from the cartItems objects */}
-                {/* {cartItems.map((item) => ( */}
-                    
-                     {/* setting key here to prevent error */}
-                    
-                    
-                        {/* <div key={item.id}>{item.name}</div>
-                     
-                         
-                        <div> */}
-                            {/* toFixed function formats a number using fixed-point notation */}
-                            {/* {item.qty} X {item.price.toFixed(2)} */}
-                        {/* </div>
-                       
-                           
-                        <div>
-                            <button onClick={() => onAdd(item)}>
-                                Add
-                            </button>
-                            <button onClick={() => onRemove(item)}>
-                                Remove
-                            </button>
-                        </div> */}
-                        
-         
-                        
-                        
-                    
-    
-                {/* ))} */}
-              
-                {/* {cartItems.length !==0 && (
-                        <>
-                        <hr/>
-                        <div><strong>Total Price</strong></div>
-                        <div><strong>{TotalPrice.toFixed(2)}</strong></div>
-                        </>
-                    )} */}
-                    
+    // using reduce function to calculate total price of all products in the cartItems array, setting default value to 0
+    const CartTotalPrice = cartItems.reduce((accumulator, current_item) => accumulator + current_item.price * current_item.qty, 0);
+
+    return (
+    <div>   
+        <div className="row my-5 mr-2 ml-2">
+            <div className="col-lg-2">
+            <Link className="btn btn-outline-secondary" to="/all_products">&#x2190; Continue Shopping</Link>
+            </div>
+            <hr/>
         </div>
+            <div>{cartItems.length === 0 && <h2>Your Cart is Empty</h2>} </div>
+            <Row className="justify-content-md-center">
+                    <Col><strong>Item</strong></Col>
+                    <Col><strong>Price</strong></Col>
+                    <Col><strong>Qty</strong></Col>
+                    <Col><strong>Change Qty</strong></Col>
+                    <Col><strong>Subtotal</strong></Col>
+            </Row>
+            {cartItems.map((item) => (
+            <Row className="justify-content-md-center border">
+                    <Col>{item.name}</Col>
+                    <Col>${item.price.toFixed(2)}</Col>
+                    <Col>{item.qty}</Col>
+                    <Col>
+                    <Link onClick={() => onAdd(item)}>Add</Link> | <Link onClick={() => onRemove(item)}>Remove</Link>
+                    </Col>
+                    <Col>${(item.price*item.qty).toFixed(2)}</Col>
+            </Row>
+            ))}
+            {cartItems.length !==0 && (
+
+            <div className="float-right my-5 mr-5"><strong>Total Price: ${CartTotalPrice.toFixed(2)}</strong></div>
+
+            
+)}
+    </div>                
+
     )
 }

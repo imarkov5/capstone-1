@@ -1,3 +1,18 @@
+@media only screen and (min-device-width : 320px) and (max-device-width : 768px) {
+    nav{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+@media only screen and (min-width: 768px){
+    nav ul{
+        padding-bottom: 2rem;
+        display:flex;
+        list-style-type: none;
+        align-items: center;
+    }
+}
 .logo{
     color: #a0978e;
     font-size: 3rem;
@@ -9,7 +24,6 @@
 }
 nav ul{
     padding-top: 1.5rem;
-    display:flex;
     margin: 0 -0.5rem;
     list-style-type: none;
 }
@@ -35,6 +49,17 @@ nav li{
 #dropdown-basic:hover {
     color: red;
 }
-#dropdown-menu{
+/* #dropdown-menu{
     background-color: #41494b;
+} */
+img{
+    width: 2.5rem;
+}
+#cart-total{
+	text-align: center;
+	color: #f3770b;
+	background-color: white;
+	font-size: 1.3rem;
+    border-style: none;
+    border-radius: 50%;
 }
