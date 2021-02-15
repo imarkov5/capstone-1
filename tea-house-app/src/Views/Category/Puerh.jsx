@@ -1,9 +1,11 @@
 import React from 'react';
-import {Card, Button} from 'react-bootstrap';
+import {Card, Button, Container, Row} from 'react-bootstrap';
 import data from '../../data';
 import { LinkContainer } from 'react-router-bootstrap';
 
-export default function Puerh() {
+export default function Puerh(props) {
+    const { onAdd } = props;
+
     const puerhTea = [];
     data.products.forEach((item, index) => {
         if(item.category == 'puerh'){
@@ -12,6 +14,8 @@ export default function Puerh() {
     })
     return (
         <div>
+            <Container fluid>
+                <Row xs={2} md={3} lg={4}>
             {
                 puerhTea.map(product => 
                     <Card style={{ width: '18rem' }}>
@@ -19,14 +23,16 @@ export default function Puerh() {
                 <Card.Body>
                 <LinkContainer to={'/products/' + product.id}><Card.Title>{product.name}</Card.Title></LinkContainer>
                     <Card.Text>
-                    ${product.price}
+                    ${product.price.toFixed(2)}
                     </Card.Text>
-                    <Button variant="primary">Add To Cart</Button>
-                    <LinkContainer to={'/products/' + product.id}><Button variant="secondary">View Details</Button></LinkContainer>
+                    <Button onClick={() => onAdd(product)} variant="outline-success">Add To Cart</Button>
+                    <LinkContainer to={'/products/' + product.id}><Button variant="outline-dark">View Details</Button></LinkContainer>
                 </Card.Body>
                 </Card>
                 )      
             }
+            </Row>
+                </Container>
                 
         </div>
 

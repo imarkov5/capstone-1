@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {Route} from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import Footer from './Components/Footer';
@@ -15,11 +15,22 @@ import ProductDetail from './Views/ProductDetail';
 import ShoppingCart from './Views/ShoppingCart';
 import data from './data';
 
+//after application loads: fetching cartItems from the local storage and parsing it back to the array, providing the key 'cartItems'. If there's nothing in local storage then set it as an empty array.
+const LocalStorageCart = JSON.parse(localStorage.getItem('cartItems') || '[]')
+
 function App() {
   //deconstructing assignment to extract data from data
   const {products} = data;
-  //using useState hook to manage cartItems
-  const [cartItems, setCartItems] = useState([]);
+
+  //using useState hook to manage cartItems, where initial state would be fetched from the LocalStorage
+  const [cartItems, setCartItems] = useState(LocalStorageCart);
+
+  //wherever cartItems array changed useEffect hook reruns after something changes in [cartItems]
+  useEffect(() => {
+    // putting items in local storage with first argument as a key and second as a string. Using stringify to convert array to string.
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
+
   //this function is an event handler that accepts a product that has to be added to the card
   const onAdd = (product) => {
     console.log(product);
@@ -68,24 +79,25 @@ function App() {
           <AllProducts onAdd={onAdd} products={products}/>
         </Route>
         <Route path="/green">
-          <Green/>
+          <Green onAdd={onAdd}/>
         </Route>
         <Route path="/white">
-          <White/>
+          <White onAdd={onAdd}/>
         </Route>
         <Route path="/black">
-          <Black/>
+          <Black onAdd={onAdd}/>
         </Route>
         <Route path="/yerba">
-          <Yerba/>
+          <Yerba onAdd={onAdd}/>
         </Route>
         <Route path="/puerh">
-          <Puerh/>
+          <Puerh onAdd={onAdd}/>
         </Route>
 
-        <Route path="/products/:id" component={ProductDetail}>
-          <ProductDetail/>
+        <Route path="/products/:id">
+          <ProductDetail onAdd={onAdd}/>
         </Route>
+
         {/* passing cartItems and onAdd/onRemove functions (+- to remove or add items from the cartItems/exist arrays) to ShoppingCart.jsx */}
         <Route path="/cart">
           <ShoppingCart
@@ -93,7 +105,9 @@ function App() {
           onRemove={onRemove}
           cartItems={cartItems}/>
         </Route>
+
       </main>
+
       <footer>
        <Footer/>
       </footer>

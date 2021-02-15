@@ -38,11 +38,11 @@ function NavBar({cartItemsQuantity}){
                         )}
                     </Link>
                 </li>
-                <li className='nav-item'>
+                {/* <li className='nav-item'>
                     <Link to='/sign-in' className='nav-links'>
                         Sign In
                     </Link>
-                </li>
+                </li> */}
             </ul>
     </nav>
     )
