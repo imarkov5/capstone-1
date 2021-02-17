@@ -7,7 +7,7 @@ export default function ProductDetail(props) {
     
     
     const product = data.products.find(x => x.id == window.location.pathname.substring(10));
-    console.log(window.location.pathname.substring(10));
+    
 
     const {onAdd} = props;
 

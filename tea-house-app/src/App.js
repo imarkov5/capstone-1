@@ -14,6 +14,7 @@ import Yerba from './Views/Category/Yerba';
 import ProductDetail from './Views/ProductDetail';
 import ShoppingCart from './Views/ShoppingCart';
 import data from './data';
+// import SearchBar from './Components/SearchBar';
 
 //after application loads: fetching cartItems from the local storage and parsing it back to the array, providing the key 'cartItems'. If there's nothing in local storage then set it as an empty array.
 const LocalStorageCart = JSON.parse(localStorage.getItem('cartItems') || '[]')
@@ -33,16 +34,16 @@ function App() {
 
   //this function is an event handler that accepts a product that has to be added to the card
   const onAdd = (product) => {
-    console.log(product);
+
     // exist is checking cartItems if there is an item (x) with an item id (x.id) that is equal to product.id that need to be added. 
-    const exist = cartItems.find((x) => x.id === product.id);
-    console.log("exist is" + exist);
+    const exist = cartItems.find((item) => item.id === product.id);
+
     // if exists then find that product in the cartItems and increase the quantity by 1 and then update cartItems in setCartItems
     if(exist) {
       setCartItems(
-        cartItems.map((x) =>
-        // if there is a product with the same id then spread exist array and increase the qty by 1, if not then add the don't change the new item
-        x.id === product.id ? {...exist, qty: exist.qty + 1} : x)
+        cartItems.map((item) =>
+        // if there is a product with the same id then spread exist array and increase the qty by 1, if not then don't change the new item
+        item.id === product.id ? {...exist, qty: exist.qty + 1} : item)
       );
       // if product doesn't exist in the cart then, spread cartItems and the product with the qty of 1
     }else{
@@ -51,18 +52,32 @@ function App() {
   }
   // onRemove function takes a product as a parameter and checks it against cartItems
   const onRemove = (product) => {
-    const exist = cartItems.find((x) => x.id === product.id);
+    const exist = cartItems.find((item) => item.id === product.id);
     if(exist.qty === 1){
       // if there's only one item in exist then remove it from the cartItems by filtering setCartItems (filter method creates new array taking only items which have id that doesn't equal to product.id))
-      setCartItems(cartItems.filter((x) => x.id !== product.id))
+      setCartItems(cartItems.filter((item) => item.id !== product.id))
     }else{
       // if the quantity is more than 1 then decrease it by one
       setCartItems(
-        cartItems.map((x) =>
+        cartItems.map((item) =>
         // mapping through the cartItems, spreading exist to decrease quantity if product id is the same as item id in the cartItems, otherwise leaving the item as it is
-        x.id === product.id ? {...exist, qty: exist.qty - 1} : x)
+        item.id === product.id ? {...exist, qty: exist.qty - 1} : item)
       );
     }
+
+    //Search
+    // const [input, setInput] =useState('');
+    // const [productList, setProductList] = useState(products);
+    // const updateInput = async (input) => {
+    //   const filterProduct = products.filter((p) => {
+    //     return p.name.toLowerCase().includes(input.toLowerCase())
+    //   })
+    //   setInput(input);
+    //   setProductList(filterProduct)
+    // }
+
+
+
   }
   return (
     <div className="App">
@@ -74,10 +89,15 @@ function App() {
         <Route exact path="/">
           <HomePage/>
         </Route>
+
         <Route path="/all_products">
           {/* passing products (to show all products) and onAdd (to use it on the "Add to Cart" button) to AllProducts.jsx */}
-          <AllProducts onAdd={onAdd} products={products}/>
+          <AllProducts 
+          onAdd={onAdd} 
+          products={products}
+          />
         </Route>
+
         <Route path="/green">
           <Green onAdd={onAdd}/>
         </Route>
