@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, ListGroup, ListGroupItem, Button, Row} from 'react-bootstrap';
+import {Card, ListGroup, ListGroupItem, Button, Row, Form} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import data from '../data';
 
@@ -29,8 +29,18 @@ export default function ProductDetail(props) {
                 <ListGroupItem>Price: ${product.price.toFixed(2)}</ListGroupItem>
             </ListGroup>
             <Card.Body>
-            <Button onClick={() => onAdd(product)} variant="outline-success" size="md">Add To Cart</Button>
+            <Form>
+    <Form.Control as="select" className="align-items-center">
+      <option value={1}>Qty: 1</option>
+      <option value={2}>2</option>
+      <option value={3}>3</option>
+      </Form.Control>
+      <br/>
+      <Button onClick={() => onAdd(product)} variant="outline-success" size="md">Add To Cart</Button>
             <LinkContainer to="/all_products"><Button variant="outline-secondary">Continue Shopping</Button></LinkContainer>
+    
+            </Form>
+            
             </Card.Body>
             </Card>
             </Row>       

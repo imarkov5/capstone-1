@@ -14,7 +14,6 @@ import Yerba from './Views/Category/Yerba';
 import ProductDetail from './Views/ProductDetail';
 import ShoppingCart from './Views/ShoppingCart';
 import data from './data';
-// import SearchBar from './Components/SearchBar';
 
 //after application loads: fetching cartItems from the local storage and parsing it back to the array, providing the key 'cartItems'. If there's nothing in local storage then set it as an empty array.
 const LocalStorageCart = JSON.parse(localStorage.getItem('cartItems') || '[]')
@@ -64,20 +63,6 @@ function App() {
         item.id === product.id ? {...exist, qty: exist.qty - 1} : item)
       );
     }
-
-    //Search
-    // const [input, setInput] =useState('');
-    // const [productList, setProductList] = useState(products);
-    // const updateInput = async (input) => {
-    //   const filterProduct = products.filter((p) => {
-    //     return p.name.toLowerCase().includes(input.toLowerCase())
-    //   })
-    //   setInput(input);
-    //   setProductList(filterProduct)
-    // }
-
-
-
   }
   return (
     <div className="App">

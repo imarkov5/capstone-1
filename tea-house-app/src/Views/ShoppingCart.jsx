@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {Row, Col, Button, Container} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router-dom';
@@ -30,9 +30,9 @@ export default function ShoppingCart(props) {
             )}
             {cartItems.map((item) => (
             <Row key={item.id} className="justify-content-md-center border">
-                    <Col>{item.name}</Col>
+                    <LinkContainer to={'/products/' + item.id} style={{cursor : "pointer"}}><Col>{item.name}</Col></LinkContainer>
                     <Col>${item.price.toFixed(2)}</Col>
-                    <Col>{item.qty > item.quantity ? 'Sorry only 10 left in stock' : item.qty}</Col>
+                    <Col>{item.qty > item.quantity ? `Sorry only ${item.quantity} left in stock` : item.qty}</Col>
                     <Col>
                     <Link onClick={() => onAdd(item)}>Add</Link> | <Link onClick={() => onRemove(item)}>Remove</Link>
                     </Col>
@@ -47,12 +47,12 @@ export default function ShoppingCart(props) {
 
             
             <Row>
-                <Col md={{ span: 8, offset: 8 }}><strong>Total Price: ${CartTotalPrice.toFixed(2)}</strong></Col>
+                <Col md={{ span: 5, offset: 10 }}><strong>Total Price: ${CartTotalPrice.toFixed(2)}</strong></Col>
             </Row>
             )}
             <br/>
             <Row>
-                <Col md={{ span: 8, offset: 8 }}><LinkContainer to="#"><Button variant="outline-success">Checkout</Button></LinkContainer></Col>
+                <Col md={{ span: 5, offset: 10 }}><LinkContainer to="#"><Button variant="warning" size="lg">Checkout</Button></LinkContainer></Col>
             </Row>
             </Container>
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import {Card, Button, Row, Container} from 'react-bootstrap';
+import {Row, Container} from 'react-bootstrap';
 import data from '../../data';
-import { LinkContainer } from 'react-router-bootstrap';
+import Product from '../../Components/Product';
 
 export default function Green(props) {
     const { onAdd } = props;
@@ -17,21 +17,10 @@ export default function Green(props) {
             <div>
 
                 <Container fluid>
-                <Row xs={2} md={3} lg={4}>
+                <Row xs={2} md={3} lg={6}>
                 {
                     greenTea.map(product => 
-                        
-                        <Card style={{ width: '20rem' }}>
-                    <LinkContainer to={'/products/' + product.id}><Card.Img variant="top" src={product.image}/></LinkContainer>
-                    <Card.Body>
-                    <LinkContainer to={'/products/' + product.id}><Card.Title>{product.name}</Card.Title></LinkContainer>
-                        <Card.Text>
-                        ${product.price.toFixed(2)}
-                        </Card.Text>
-                        <Button onClick={() => onAdd(product)} variant="outline-success">Add To Cart</Button>
-                        <LinkContainer to={'/products/' + product.id}><Button variant="outline-dark">View Details</Button></LinkContainer>
-                    </Card.Body>
-                    </Card>
+                        <Product key={product.id} product={product} onAdd={onAdd}></Product>
                     )  
                     
                 }

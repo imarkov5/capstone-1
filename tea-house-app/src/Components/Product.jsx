@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Button, Col} from 'react-bootstrap';
+import {Card, Button} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 export default function Product(props) {
@@ -11,10 +11,10 @@ export default function Product(props) {
     return (
         <div>
             
-                <Card style={{ width: '15rem' }} className="card">
-                    <LinkContainer to={`products/${product.id}`}><Card.Img variant="top" src={product.image}/></LinkContainer>
+                <Card style={{ width: '100%' }}>
+                    <LinkContainer to={`products/${product.id}`} style={{cursor : "pointer"}}><Card.Img variant="top" src={product.image}/></LinkContainer>
                     <Card.Body>
-                    <LinkContainer to={`products/${product.id}`}><Card.Title>{product.name}</Card.Title></LinkContainer>
+                    <LinkContainer to={`products/${product.id}`} style={{cursor : "pointer"}}><Card.Title>{product.name}</Card.Title></LinkContainer>
                         <Card.Text>
                         ${product.price.toFixed(2)}
                         </Card.Text>
