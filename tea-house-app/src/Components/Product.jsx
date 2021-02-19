@@ -21,7 +21,6 @@ export default function Product(props) {
                         {/* Using onCLick handler to pass onAdd function with the product */}
                         <Button onClick={() => onAdd(product)} variant="outline-success" size="sm">Add To Cart</Button>
                         <LinkContainer to = {`products/${product.id}`}><Button variant="outline-dark" size="sm">View Details</Button></LinkContainer>
-                        {/* <LinkContainer to={{ pathname: '/products/${product.id', state: { item: product} }}>View Details</LinkContainer> */}
                     </Card.Body>
                 </Card>
             

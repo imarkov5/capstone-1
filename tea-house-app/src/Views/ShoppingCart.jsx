@@ -1,7 +1,8 @@
 import React from 'react';
-import {Row, Col, Button, Container} from 'react-bootstrap';
+import {Row, Col, Button, Container, Table, Image} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Link } from 'react-router-dom';
+import Checkout from '../Components/Checkout';
 
 export default function ShoppingCart(props) {
     //passed the props from App.jsx
@@ -20,41 +21,49 @@ export default function ShoppingCart(props) {
             <div>{cartItems.length === 0 && <h2>Your Cart is Empty</h2>}</div>
 
             {cartItems.length !==0 && (
-            <Row className="justify-content-md-center">
-                    <Col><strong>Item</strong></Col>
-                    <Col><strong>Price</strong></Col>
-                    <Col><strong>Qty</strong></Col>
-                    <Col><strong>Change Qty</strong></Col>
-                    <Col><strong>Subtotal</strong></Col>
-            </Row>
-            )}
+            <Table borderless hover size="lg">
+                <thead>
+                    <tr className="text-left">
+                        <td></td>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Change Qty</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+            
             {cartItems.map((item) => (
-            <Row key={item.id} className="justify-content-md-center border">
-                    <LinkContainer to={'/products/' + item.id} style={{cursor : "pointer"}}><Col>{item.name}</Col></LinkContainer>
-                    <Col>${item.price.toFixed(2)}</Col>
-                    <Col>{item.qty > item.quantity ? `Sorry only ${item.quantity} left in stock` : item.qty}</Col>
-                    <Col>
-                    <Link onClick={() => onAdd(item)}>Add</Link> | <Link onClick={() => onRemove(item)}>Remove</Link>
-                    </Col>
-                    <Col>${(item.price*item.qty).toFixed(2)}</Col>
-            </Row>
-            
-            ))}
-
-            <br/>
-            <Container>
-            {cartItems.length !==0 && (
-
-            
-            <Row>
-                <Col md={{ span: 5, offset: 10 }}><strong>Total Price: ${CartTotalPrice.toFixed(2)}</strong></Col>
-            </Row>
+                <tbody key={item.id} className="justify-content-md-center border">
+                    <tr className="text-left">
+                        <td><Image thumbnail src={item.image} alt="product image"/></td>
+                    <LinkContainer to={'/products/' + item.id} style={{cursor : "pointer"}}><td>{item.name}</td></LinkContainer>
+                        <td>${item.price.toFixed(2)}</td>
+                        <td>{item.qty > item.quantity ? `Sorry only ${item.quantity} left in stock`: item.qty}</td>
+                        <td>
+                        <Link onClick={() => onAdd(item)}>Add</Link> | <Link onClick={() => onRemove(item)}>Remove</Link>
+                        </td>
+                        <td>${(item.price*item.qty).toFixed(2)}</td>
+                    </tr>
+                </tbody>
+                ))}
+            </Table>
             )}
+
             <br/>
-            <Row>
-                <Col md={{ span: 5, offset: 10 }}><LinkContainer to="#"><Button variant="warning" size="lg">Checkout</Button></LinkContainer></Col>
-            </Row>
+            {cartItems.length !==0 && (
+            <Container>
+                <Row>
+                    <Col md={{ span: 5, offset: 10 }}><strong>Total Price: ${CartTotalPrice.toFixed(2)}</strong></Col>
+                </Row>
+                <br/>
+
+                <Checkout CartTotalPrice={CartTotalPrice}/>
+                {/* <Row>
+                    <Col md={{ span: 5, offset: 10 }}><LinkContainer to="/checkout"><Button variant="warning" size="lg">Checkout</Button></LinkContainer></Col>
+                </Row> */}
             </Container>
+            )}
 
     </div>                
 

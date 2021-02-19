@@ -110,7 +110,6 @@ function App() {
           onRemove={onRemove}
           cartItems={cartItems}/>
         </Route>
-
       </main>
 
       <footer>

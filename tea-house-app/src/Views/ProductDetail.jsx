@@ -29,18 +29,8 @@ export default function ProductDetail(props) {
                 <ListGroupItem>Price: ${product.price.toFixed(2)}</ListGroupItem>
             </ListGroup>
             <Card.Body>
-            <Form>
-    <Form.Control as="select" className="align-items-center">
-      <option value={1}>Qty: 1</option>
-      <option value={2}>2</option>
-      <option value={3}>3</option>
-      </Form.Control>
-      <br/>
-      <Button onClick={() => onAdd(product)} variant="outline-success" size="md">Add To Cart</Button>
-            <LinkContainer to="/all_products"><Button variant="outline-secondary">Continue Shopping</Button></LinkContainer>
-    
-            </Form>
-            
+                <Button onClick={() => onAdd(product)} variant="outline-success" size="md">Add To Cart</Button>
+                <LinkContainer to="/all_products"><Button variant="outline-secondary">Continue Shopping</Button></LinkContainer>
             </Card.Body>
             </Card>
             </Row>       

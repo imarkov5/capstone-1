@@ -12,21 +12,16 @@ export default function Black(props) {
         }
     })
     return (
-    
-
             <div>
-
                 <Container fluid>
-                <Row xs={2} md={3} lg={6}>
-                {
-                    blackTea.map(product => 
-                        <Product key={product.id} product={product} onAdd={onAdd}></Product>
-                    )  
-                    
-                }
-                </Row>
-                </Container>
-                    
+                    <Row xs={2} md={3} lg={6}>
+                    {
+                        blackTea.map(product => 
+                            <Product key={product.id} product={product} onAdd={onAdd}></Product>
+                        )                    
+                    }
+                    </Row>
+                </Container>    
             </div>
       
     )
