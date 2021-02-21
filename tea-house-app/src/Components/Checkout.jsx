@@ -1,15 +1,19 @@
 import React from 'react';
 import { Form, Col, Button, Row } from 'react-bootstrap';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements }  from '@stripe/react-stripe-js';
+import CheckoutForm from './CheckoutForm';
 
-export default function Checkout({CartTotalPrice}) {
 
+export default function Checkout() {
+  
     return (
         <div>
           <br/>
           
           <Form>
-            <Row>
-            <Col className="border">
+            {/* <Row>
+            <Col> */}
             
           <Row><h6 className="float-left">Shipping Address:</h6></Row>
           <Form.Row>
@@ -51,10 +55,12 @@ export default function Checkout({CartTotalPrice}) {
               <Form.Control />
             </Form.Group>
           </Form.Row>
-
-          </Col>
+          <Form.Check className="float-left" inline label="Same as Billing Address"/>
+          <br/>
+          <br/>
+          {/* </Col>
           
-          <Col className="border px=2rem py=2rem">
+          <Col> */}
           <Row><h6 className="float-left">Billing Address:</h6></Row>
           <Form.Row>
             <Form.Group as={Col}>
@@ -95,12 +101,20 @@ export default function Checkout({CartTotalPrice}) {
               <Form.Control />
             </Form.Group>
           </Form.Row>
-      </Col>
-      </Row>
-          <Button variant="warning" size="lg" type="submit" className="my-5">
-            Checkout
+      {/* </Col>
+      </Row> */}
+          <Button variant="outline-info" type="submit" className="my-5">
+            Use this address
           </Button>
         </Form>
+        <>
+        <hr/>
+        <Elements stripe={loadStripe(
+          'pk_test_51IMNQ7LBIsTrc0hCyQNqQrrx0Bb0iPbg4tvda6ahnJgNQiGlYLBP6zyWGuEXkephc9YkygzHD3A4eqXvjnFS1v8W002caSvZx7',
+        )}>
+          <CheckoutForm/>
+        </Elements>
+        </>
       </div>
     )
 }

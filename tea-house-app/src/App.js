@@ -15,6 +15,7 @@ import ProductDetail from './Views/ProductDetail';
 import ShoppingCart from './Views/ShoppingCart';
 import data from './data';
 
+
 //after application loads: fetching cartItems from the local storage and parsing it back to the array, providing the key 'cartItems'. If there's nothing in local storage then set it as an empty array.
 const LocalStorageCart = JSON.parse(localStorage.getItem('cartItems') || '[]')
 
@@ -108,7 +109,8 @@ function App() {
           <ShoppingCart
           onAdd={onAdd}
           onRemove={onRemove}
-          cartItems={cartItems}/>
+          cartItems={cartItems}
+          />
         </Route>
       </main>
 

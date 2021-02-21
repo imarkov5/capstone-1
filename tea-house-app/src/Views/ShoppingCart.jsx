@@ -58,10 +58,7 @@ export default function ShoppingCart(props) {
                 </Row>
                 <br/>
 
-                <Checkout CartTotalPrice={CartTotalPrice}/>
-                {/* <Row>
-                    <Col md={{ span: 5, offset: 10 }}><LinkContainer to="/checkout"><Button variant="warning" size="lg">Checkout</Button></LinkContainer></Col>
-                </Row> */}
+                <Checkout/>
             </Container>
             )}
 
