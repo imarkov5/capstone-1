@@ -5,7 +5,6 @@ import {Row, Container} from 'react-bootstrap';
 
 
 export default function AllProducts(props) {
-    // passed products and onAdd in App.js and deconstructing them here
     const {products, onAdd} = props;
     const [search, setSearch] = useState("")
 
@@ -20,33 +19,36 @@ export default function AllProducts(props) {
             return product;
         }
     })
+
     return (
         <div>
+            {/* This is the react-bootstrap navbar that I'm using for styling the search bar - not NavBar component */}
             <Navbar className="bg-light justify-content-between">
+                {/* Put an empty react-bootstrap form just for styling so that Search is on the right */}
                 <Form inline>
                 </Form>
                 <Form inline>
                 <Form.Control className="float-right" type="text" placeholder="Name, Serial #, Price" className="mr-sm-2" onChange={(e) => {
                     setSearch(e.target.value.toLowerCase());
                 }}
-                    />
+                />
                     <Button variant="outline-success">Search</Button>
                 </Form>
             </Navbar>
+
             <div>
             <Container fluid>
                 <Row xs={2} md={3} lg={6}>
-                {/* mapping through products array to display all product items and passing it to Product component */}
-                {filteredProducts.length == 0 ? "NO SEARCH RESULTS." :
-    
-                filteredProducts.map((product) => (
-                    // added product and onAdd to pass it to Product component
-                    <Product key={product.id} product={product} onAdd={onAdd}></Product>
-                    
-                ))}
+                    {filteredProducts.length == 0 ?
+                        "NO SEARCH RESULTS."
+                        :
+                        filteredProducts.map((product) => (
+                            <Product key={product.id} product={product} onAdd={onAdd}></Product>
+                    ))}
                 </Row>
-                </Container>
+            </Container>
             </div>
+
         </div>
     )
 }

@@ -2,8 +2,7 @@ import React from 'react'
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { Button } from 'react-bootstrap';
 
-export default function CheckoutForm() {
-
+export default function CheckoutForm({history}) {
     const stripe = useStripe();
     const elements = useElements();
    
@@ -18,13 +17,13 @@ export default function CheckoutForm() {
         } else {
             console.log(paymentMethod)
             localStorage.clear();
-            
             alert('Your payment was successful! Thank you!');
+            history.push("/");
         }
     };
+    
     return (
         <div>
-            
             <form onSubmit={handleSubmit}>
                 <CardElement/>
                 <br/>

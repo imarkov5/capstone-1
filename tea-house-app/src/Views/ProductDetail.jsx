@@ -1,18 +1,13 @@
 import React from 'react';
-import {Card, ListGroup, ListGroupItem, Button, Row, Form} from 'react-bootstrap';
+import {Card, ListGroup, ListGroupItem, Button, Row} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import data from '../data';
 
 export default function ProductDetail(props) {
-    
-    
     const product = data.products.find(x => x.id == window.location.pathname.substring(10));
-    
-
     const {onAdd} = props;
 
     return (
-        
         <div>
             <Row className="justify-content-md-center">
             <Card style={{ width: '30rem' }}>

@@ -6,11 +6,13 @@ import Product from '../../Components/Product';
 export default function Black(props) {
     const { onAdd } = props;
     const blackTea = [];
+    
     data.products.forEach((item, index) => {
         if(item.category == 'black'){
             blackTea.push(item);
         }
     })
+    
     return (
             <div>
                 <Container fluid>
@@ -23,6 +25,5 @@ export default function Black(props) {
                     </Row>
                 </Container>    
             </div>
-      
     )
 }

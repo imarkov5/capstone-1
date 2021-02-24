@@ -4,33 +4,32 @@ import './NavBar.css';
 import { Dropdown } from 'react-bootstrap';
 
 function NavBar({cartItemsQuantity}){
-    // passed destructured props (cartItemsQuantity) from App
+    
     return(
         <nav>
             <ul>
                 <li className='push-left'>
-                 <Link className="logo" to="/">The Tea House</Link>
+                    <Link className="logo" to="/">The Tea House</Link>
                 </li>
                 <li className='nav-item'>
-                <Dropdown>
-                    <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                        Collections
-                    </Dropdown.Toggle>
+                    <Dropdown>
+                        <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                            Collections
+                        </Dropdown.Toggle>
 
-                    <Dropdown.Menu id="dropdown-menu">
-                        <Dropdown.Item href="/all_products">All Collections</Dropdown.Item>
-                        <Dropdown.Item href="/green">Green</Dropdown.Item>
-                        <Dropdown.Item href="/white">White</Dropdown.Item>
-                        <Dropdown.Item href="/yerba">Yerba</Dropdown.Item>
-                        <Dropdown.Item href="/puerh">Puerh</Dropdown.Item>
-                        <Dropdown.Item href="/black">Black</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                        <Dropdown.Menu id="dropdown-menu">
+                            <Dropdown.Item href="/all_products">All Collections</Dropdown.Item>
+                            <Dropdown.Item href="/green">Green</Dropdown.Item>
+                            <Dropdown.Item href="/white">White</Dropdown.Item>
+                            <Dropdown.Item href="/yerba">Yerba</Dropdown.Item>
+                            <Dropdown.Item href="/puerh">Puerh</Dropdown.Item>
+                            <Dropdown.Item href="/black">Black</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </li>
                 <li className='nav-item'>
                     <Link to='/cart' className='nav-links'>
                         <img src="images/cart.png"/>
-                        {/* if there is objects in cartItems array (products in the cart) show quantity, if not empty string */}
                         {cartItemsQuantity ? (
                             <span id="cart-total">{cartItemsQuantity}</span>
                         ) : (
@@ -38,13 +37,8 @@ function NavBar({cartItemsQuantity}){
                         )}
                     </Link>
                 </li>
-                {/* <li className='nav-item'>
-                    <Link to='/sign-in' className='nav-links'>
-                        Sign In
-                    </Link>
-                </li> */}
             </ul>
-    </nav>
+        </nav>
     )
 }
 export default NavBar;
