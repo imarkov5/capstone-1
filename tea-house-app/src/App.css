@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+.App-header {
+  background-color: #41494b;
+  min-height: 10vh;
+  font-size: calc(10px + 2vmin);
+}
+main{
+  min-height: 80vh;
+}
+footer{
+  min-height: 2vh;
+}
+
+
