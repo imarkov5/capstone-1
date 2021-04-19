@@ -13,7 +13,7 @@ import Puerh from './Views/Category/Puerh';
 import Yerba from './Views/Category/Yerba';
 import ProductDetail from './Views/ProductDetail';
 import ShoppingCart from './Views/ShoppingCart';
-import data from './data';
+import data from './data.json';
 
 
 const LocalStorageCart = JSON.parse(localStorage.getItem('cartItems') || '[]')

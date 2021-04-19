@@ -1,6 +1,6 @@
 import React from 'react';
 import {Row, Container} from 'react-bootstrap';
-import data from '../../data';
+import data from '../../data.json';
 import Product from '../../Components/Product';
 
 export default function Puerh(props) {
