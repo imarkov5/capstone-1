@@ -35,7 +35,7 @@ export default function ShoppingCart(props) {
                     {cartItems.map((item) => (
                     <tbody key={item.id} className="justify-content-md-center border">
                         <tr className="text-left">
-                            <td><Image thumbnail src={item.image} alt="product image"/></td>
+                            <td><Image thumbnail src={item.imageUrl} alt="product image"/></td>
                             <LinkContainer to={'/products/' + item.id} style={{cursor : "pointer"}}><td>{item.name}</td></LinkContainer>
                             <td>${item.price.toFixed(2)}</td>
                             <td>{item.qty > item.quantity ? `Sorry only ${item.quantity} left in stock`: item.qty}</td>

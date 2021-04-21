@@ -14,13 +14,21 @@ import Yerba from './Views/Category/Yerba';
 import ProductDetail from './Views/ProductDetail';
 import ShoppingCart from './Views/ShoppingCart';
 import data from './data.json';
+import axios from 'axios';
 
 
 const LocalStorageCart = JSON.parse(localStorage.getItem('cartItems') || '[]')
 
 function App() {
 
-  const {products} = data;
+  const [products, setProducts] = useState([]);
+  useEffect(()=>{
+    axios.get("http://localhost:8080/products")
+    .then(response => setProducts(response.data))
+    .catch(error => console.log(error))
+  })
+
+
   const [cartItems, setCartItems] = useState(LocalStorageCart);
 
   useEffect(() => {
@@ -74,7 +82,10 @@ function App() {
           <White onAdd={onAdd}/>
         </Route>
         <Route path="/black">
-          <Black onAdd={onAdd}/>
+          <Black
+          onAdd={onAdd}
+          products={products}
+          />
         </Route>
         <Route path="/yerba">
           <Yerba onAdd={onAdd}/>
@@ -83,7 +94,7 @@ function App() {
           <Puerh onAdd={onAdd}/>
         </Route>
         <Route path="/products/:id">
-          <ProductDetail onAdd={onAdd}/>
+          <ProductDetail onAdd={onAdd} products={products}/>
         </Route>
         <Route path="/cart"
           render={({history}) =>

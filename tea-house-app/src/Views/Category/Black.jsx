@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Row, Container} from 'react-bootstrap';
 import data from '../../data.json';
 import Product from '../../Components/Product';
+import axios from 'axios';
 
 export default function Black(props) {
-    const { onAdd } = props;
+    const { products, onAdd } = props;
     const blackTea = [];
     
-    data.products.forEach((item, index) => {
-        if(item.category == 'black'){
+    products.forEach((item, index) => {
+        if(item.category_id == 2){
             blackTea.push(item);
         }
     })

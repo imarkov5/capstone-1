@@ -10,7 +10,7 @@ export default function Product(props) {
         <div>
             
             <Card style={{ width: '100%' }}>
-                <LinkContainer to={`products/${product.id}`} style={{cursor : "pointer"}}><Card.Img variant="top" src={product.image}/></LinkContainer>
+                <LinkContainer to={`products/${product.id}`} style={{cursor : "pointer"}}><Card.Img variant="top" src={product.imageUrl}/></LinkContainer>
                 <Card.Body>
                 <LinkContainer to={`products/${product.id}`} style={{cursor : "pointer"}}><Card.Title>{product.name}</Card.Title></LinkContainer>
                     <Card.Text>

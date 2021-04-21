@@ -2,9 +2,16 @@ import React, {useState} from 'react';
 import { Form, Button, Navbar } from 'react-bootstrap';
 import Product from '../Components/Product';
 import {Row, Container} from 'react-bootstrap';
+import AllProductService from '../API/AllProductsService.js'
 
 
 export default function AllProducts(props) {
+
+    // retrieveAllProducts(){
+    //     AllProductService.executeAllProductsService()
+    //     .then(response => console.log(response))
+    // }
+
     const {products, onAdd} = props;
     const [search, setSearch] = useState("")
 
