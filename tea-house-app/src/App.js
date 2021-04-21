@@ -13,6 +13,7 @@ import Puerh from './Views/Category/Puerh';
 import Yerba from './Views/Category/Yerba';
 import ProductDetail from './Views/ProductDetail';
 import ShoppingCart from './Views/ShoppingCart';
+import NewProduct from './Views/NewProduct';
 import data from './data.json';
 import axios from 'axios';
 
@@ -26,7 +27,7 @@ function App() {
     axios.get("http://localhost:8080/products")
     .then(response => setProducts(response.data))
     .catch(error => console.log(error))
-  })
+  },[])
 
 
   const [cartItems, setCartItems] = useState(LocalStorageCart);
@@ -93,9 +94,15 @@ function App() {
         <Route path="/puerh">
           <Puerh onAdd={onAdd}/>
         </Route>
+
+        <Route path="/new_product">
+          <NewProduct products={products}/>
+        </Route>
+
         <Route path="/products/:id">
           <ProductDetail onAdd={onAdd} products={products}/>
         </Route>
+        
         <Route path="/cart"
           render={({history}) =>
           <ShoppingCart

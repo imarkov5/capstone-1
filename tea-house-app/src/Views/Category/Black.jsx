@@ -5,14 +5,15 @@ import Product from '../../Components/Product';
 import axios from 'axios';
 
 export default function Black(props) {
-    const { products, onAdd } = props;
+    const { onAdd } = props;
     const blackTea = [];
     
-    products.forEach((item, index) => {
-        if(item.category_id == 2){
+    data.products.forEach((item, index) => {
+        if(item.category == 'black'){
             blackTea.push(item);
         }
     })
+    console.log(blackTea);
     
     return (
             <div>
