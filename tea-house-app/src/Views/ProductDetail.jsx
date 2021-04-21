@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Card, ListGroup, ListGroupItem, Button, Row} from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 import data from '../data.json';
@@ -7,12 +7,16 @@ import {useParams} from 'react-router-dom';
 export default function ProductDetail(props) {
     const {id} = useParams();
     console.log(props);
-    const {products, onAdd} = props;
-    console.log(products);
-    // const product = data.products.find(x => x.id == window.location.pathname.substring(10));
-    // const product = products.find(x => x.id == id);
-    const product = products.filter(prod => prod.id ==id)[0];
-    console.log(product);
+    const {onAdd} = props;
+    const [product, setProduct] = useState();
+    useEffect(()=>{
+        axios.get(`http://localhost:8080/products/${id}`)
+        .then(response => setProduct(response.data))
+        .catch(error => console.log(error))
+      }, []);
+    
+    // const product = products.filter(prod => prod.id ==id)[0];
+    // console.log(product);
 
     return (
         <div>
