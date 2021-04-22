@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { Form, Button, Navbar } from 'react-bootstrap';
 import Product from '../Components/Product';
 import {Row, Container} from 'react-bootstrap';
-import AllProductService from '../API/AllProductsService.js'
 
 
 export default function AllProducts(props) {
@@ -18,8 +17,8 @@ export default function AllProducts(props) {
     const filteredProducts = products.filter((product) => {
         if (
             product.name.toLowerCase().includes(search) ||
-            product.s_number.toLowerCase().includes(search) ||
-            product.category.toLowerCase().includes(search) ||
+            product.serialNumber.toLowerCase().includes(search) ||
+            // product.getCategory.toLowerCase().includes(search) ||
             product.price.toFixed(2).toString().includes(search)
         
         ) {

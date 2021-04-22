@@ -13,7 +13,9 @@ import Puerh from './Views/Category/Puerh';
 import Yerba from './Views/Category/Yerba';
 import ProductDetail from './Views/ProductDetail';
 import ShoppingCart from './Views/ShoppingCart';
+import Admin from './Views/Admin';
 import NewProduct from './Views/NewProduct';
+import UpdateProduct from './Views/UpdateProduct';
 import data from './data.json';
 import axios from 'axios';
 
@@ -95,12 +97,20 @@ function App() {
           <Puerh onAdd={onAdd}/>
         </Route>
 
-        <Route path="/new_product">
-          <NewProduct products={products}/>
+        <Route path="/admin">
+          <Admin/>
+        </Route>
+
+        <Route path="/add_product">
+          <NewProduct/>
         </Route>
 
         <Route path="/products/:id">
           <ProductDetail onAdd={onAdd} products={products}/>
+        </Route>
+
+        <Route path="/update_product/:prodId">
+          <UpdateProduct products={products}/>
         </Route>
         
         <Route path="/cart"

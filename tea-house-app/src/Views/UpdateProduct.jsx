@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {Form, Button, Col, Row} from 'react-bootstrap';
-import { LinkContainer, Link } from 'react-router-bootstrap';
+import {Form, Button} from 'react-bootstrap';
 import axios from 'axios';
+import {useParams} from 'react-router-dom';
 
-export default function NewProduct(){
+export default function UpdateProduct(props){
+    const {products} = props;
+    const {prodId} = useParams();
     const [name, setName] = useState("");
     const [price, setPrice] = useState();
     const [category_id, setCategoryId] = useState(1);
@@ -12,15 +14,19 @@ export default function NewProduct(){
     const [imageUrl, setImageUrl] = useState("");
     const [quantity, setQuantity] = useState();
 
-    const addProduct = event => {
+    const updateProduct = event => {
         event.preventDefault();
-        console.log({name, description, serialNumber, price, quantity, imageUrl, category_id})
-        axios.post("http://localhost:8080/products/new", {name, description, serialNumber, price, quantity, imageUrl, category_id})
+        console.log(prodId)
+        axios.put(`http://localhost:8080/products/update/${prodId}`, {prodId, name, description, serialNumber, price, quantity, imageUrl, category_id})
     }
-
+    // const product = products.forEach((p, id) =>{
+    //     if(p.id == prodId){
+    //         return p;
+    //     }
+    // })
     return(
         <div>
-            <Form className="w-50" onSubmit={addProduct}>
+         <Form className="w-50" onSubmit={updateProduct}>
   <Form.Group>
     <Form.Label>Product Name</Form.Label>
     <Form.Control onChange={e=>setName(e.target.value)}/>
@@ -56,8 +62,9 @@ export default function NewProduct(){
     <Form.Control onChange={e=>setImageUrl(e.target.value)}/>
   </Form.Group>
   {/* <LinkContainer to = {"/admin"}></LinkContainer> */}
-  <Button type="submit" variant="outline-dark" size="lg" text-align="right" block>Add Product</Button>
-</Form>
+  <Button type="submit" variant="outline-dark" size="lg" text-align="right" block>Update Product</Button>
+</Form>   
         </div>
     )
+
 }
