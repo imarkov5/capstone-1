@@ -29,15 +29,15 @@ export default function UpdateProduct(props){
     // })
     return(
         <div>
-            <h1>Update Product</h1>
          <Form className="w-50" onSubmit={updateProduct}>
+         <h1>Update Product</h1>
   <Form.Group>
-    <Form.Label>Product Name</Form.Label>
-    <Form.Control onChange={e=>setName(e.target.value)}/>
+    {/* <Form.Label>Product Name</Form.Label> */}
+    <Form.Control placeholder="Product Name" onChange={e=>setName(e.target.value)}/>
   </Form.Group>
   <Form.Group>
-    <Form.Label>Category</Form.Label>
-    <Form.Control as="select" onChange={e=>setCategoryId(e.target.value)}>
+    {/* <Form.Label>Category</Form.Label> */}
+    <Form.Control placeholder="category" as="select" onChange={e=>setCategoryId(e.target.value)}>
       <option value="1">Green</option>
       <option value="2">White</option>
       <option value="3">Black</option>
@@ -46,24 +46,24 @@ export default function UpdateProduct(props){
     </Form.Control>
   </Form.Group>
   <Form.Group>
-    <Form.Label>Price</Form.Label>
-    <Form.Control onChange={e=>setPrice(e.target.value)}/>
+    {/* <Form.Label>Price</Form.Label> */}
+    <Form.Control placeholder="Price" onChange={e=>setPrice(e.target.value)}/>
   </Form.Group>
   <Form.Group>
-    <Form.Label>Qty</Form.Label>
-    <Form.Control onChange={e=>setQuantity(e.target.value)}/>
+    {/* <Form.Label>Qty</Form.Label> */}
+    <Form.Control placeholder="Quantity" onChange={e=>setQuantity(e.target.value)}/>
   </Form.Group>
   <Form.Group>
-    <Form.Label>Serial #</Form.Label>
-    <Form.Control onChange={e=>setSerialNumber(e.target.value)}/>
+    {/* <Form.Label>Serial #</Form.Label> */}
+    <Form.Control placeholder="Serial Number" onChange={e=>setSerialNumber(e.target.value)}/>
   </Form.Group>
   <Form.Group>
-    <Form.Label>Description</Form.Label>
-    <Form.Control as="textarea" rows={3} onChange={e=>setDescription(e.target.value)}/>
+    {/* <Form.Label>Description</Form.Label> */}
+    <Form.Control placeholder="Description" as="textarea" rows={3} onChange={e=>setDescription(e.target.value)}/>
   </Form.Group>
   <Form.Group>
-    <Form.Label>Image URL</Form.Label>
-    <Form.Control onChange={e=>setImageUrl(e.target.value)}/>
+    {/* <Form.Label>Image URL</Form.Label> */}
+    <Form.Control placeholder="Image URL" onChange={e=>setImageUrl(e.target.value)}/>
   </Form.Group>
   {/* <LinkContainer to = {"/admin"}></LinkContainer> */}
   <Button type="submit" variant="outline-dark" size="lg" text-align="right" block>Update Product</Button>

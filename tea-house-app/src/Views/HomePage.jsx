@@ -9,6 +9,7 @@ export default function HomePage() {
                 <h3>A CUP OF TEA</h3>
                 <h2>MAKES EVERYTHING</h2>
                 <h1>BETTER</h1> 
+                <h4>Temporary link for Admin access</h4>
            </div></Link>
         </div>
     )
