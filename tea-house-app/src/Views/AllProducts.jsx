@@ -6,10 +6,6 @@ import {Row, Container} from 'react-bootstrap';
 
 export default function AllProducts(props) {
 
-    // retrieveAllProducts(){
-    //     AllProductService.executeAllProductsService()
-    //     .then(response => console.log(response))
-    // }
 
     const {products, onAdd} = props;
     const [search, setSearch] = useState("")

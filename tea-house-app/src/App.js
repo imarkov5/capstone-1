@@ -110,7 +110,7 @@ function App() {
         </Route>
 
         <Route path="/update_product/:prodId">
-          <UpdateProduct products={products}/>
+          <UpdateProduct/>
         </Route>
         
         <Route path="/cart"

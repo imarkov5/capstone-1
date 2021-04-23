@@ -7,9 +7,16 @@ import axios from 'axios';
 export default function Black(props) {
     const { onAdd } = props;
     const blackTea = [];
+
+    const [products, setProducts] = useState([]);
+  useEffect(()=>{
+    axios.get("http://localhost:8080/products")
+    .then(response => setProducts(response.data))
+    .catch(error => console.log(error))
+  },[])
     
-    data.products.forEach((item, index) => {
-        if(item.category == 'black'){
+    products.forEach((item, index) => {
+        if(item.category_id == 3){
             blackTea.push(item);
         }
     })
