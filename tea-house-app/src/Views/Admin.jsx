@@ -5,17 +5,26 @@ import { LinkContainer } from 'react-router-bootstrap';
 
 export default function Admin() {
   const [products, setProducts] = useState([]);
+
   useEffect(()=>{
     axios.get("http://localhost:8080/products")
-    .then(response => setProducts(response.data))
+    .then(response =>
+      setProducts(response.data))
     .catch(error => console.log(error))
+    
   },[])
-
   
-  // const deleteProduct =(productId)= event => {
-  //     event.preventDefault();
-  //     axios.delete("http://localhost:8080/products/delete" + productId)
-  // }
+  
+  const deleteProduct = (prodId) => {
+      // event.preventDefault();
+      console.log(prodId);
+      axios.delete("http://localhost:8080/products/delete/" + prodId)
+      .then(response => {
+        if(response.data != null){
+          alert("Product deleted successfully!");
+        }
+      })
+  }
 
 
 
@@ -23,7 +32,6 @@ export default function Admin() {
     return(
         <div>
           <LinkContainer to = {"/add_product"}><Button variant="outline-dark" size="lg" text-align="right" block>Add Product</Button></LinkContainer>
-{/* <Button variant="dark" size="lg">Dark</Button>{' '} */}
 <Table striped bordered hover variant="dark">
   
   <thead>
@@ -62,16 +70,14 @@ export default function Admin() {
       
       <td>
       <LinkContainer to={`/products/${product.id}`}><Button variant="outline-info" size="sm">View</Button></LinkContainer>
-      <LinkContainer to={`/update_product/${product.id}`}><Button variant="outline-warning" size="sm">Update</Button></LinkContainer>
-      <LinkContainer to={"/"}><Button variant="outline-danger" size="sm">Delete</Button></LinkContainer>
+      <LinkContainer to={`/update_product/${product.id}`}><Button variant="outline-warning" size="sm">Update</Button></LinkContainer>      
+      <Button variant="outline-danger" size="sm" onClick = {()=> deleteProduct(product.id)}>Delete</Button>
+    
       </td>
     </tr>
     )} 
   </tbody>
-  
 </Table>
-    
        </div>
-        
     )
 }

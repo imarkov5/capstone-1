@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Form, Button, Col, Row} from 'react-bootstrap';
 import { LinkContainer, Link } from 'react-router-bootstrap';
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 export default function NewProduct(){
@@ -12,14 +13,17 @@ export default function NewProduct(){
     const [imageUrl, setImageUrl] = useState("");
     const [quantity, setQuantity] = useState();
 
+    let history = useHistory();
     const addProduct = event => {
         event.preventDefault();
         console.log({name, description, serialNumber, price, quantity, imageUrl, category_id})
         axios.post("http://localhost:8080/products/new", {name, description, serialNumber, price, quantity, imageUrl, category_id})
+        .then(response => {history.push("/admin")})
     }
 
     return(
         <div>
+          <h1>Add New Product</h1>
             <Form className="w-50" onSubmit={addProduct}>
   <Form.Group>
     <Form.Label>Product Name</Form.Label>
