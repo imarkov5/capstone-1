@@ -1,14 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {Row, Container} from 'react-bootstrap';
-import data from '../../data';
+import data from '../../data.json';
 import Product from '../../Components/Product';
+import axios from 'axios';
 
 export default function Yerba(props) {
     const { onAdd } = props;
     const yerbaTea = [];
     
-    data.products.forEach((item, index) => {
-        if(item.category == 'yerba'){
+    const [products, setProducts] = useState([]);
+    useEffect(()=>{
+      axios.get("http://localhost:8080/products")
+      .then(response => setProducts(response.data))
+      .catch(error => console.log(error))
+    },[])
+
+    products.forEach((item, index) => {
+        if(item.category_id == 4){
             yerbaTea.push(item);
         }
     })

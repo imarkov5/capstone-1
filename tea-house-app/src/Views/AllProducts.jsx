@@ -5,14 +5,16 @@ import {Row, Container} from 'react-bootstrap';
 
 
 export default function AllProducts(props) {
+
+
     const {products, onAdd} = props;
     const [search, setSearch] = useState("")
 
     const filteredProducts = products.filter((product) => {
         if (
             product.name.toLowerCase().includes(search) ||
-            product.s_number.toLowerCase().includes(search) ||
-            product.category.toLowerCase().includes(search) ||
+            product.serialNumber.toLowerCase().includes(search) ||
+            // product.getCategory.toLowerCase().includes(search) ||
             product.price.toFixed(2).toString().includes(search)
         
         ) {
